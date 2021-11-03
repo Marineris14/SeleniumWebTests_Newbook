@@ -123,7 +123,7 @@ namespace Unit_Test_UI
                 "/div/nb-edit-switcher/div/div"));
             editAccountInfo2.Click();
             IWebElement verifEmailPassword = driver.FindElement(By.CssSelector("class [type ='text']"));
-            verifEmailPassword.SendKeys("1234%Gfk");
+            verifEmailPassword.SendKeys("14finans14Se*");
             IWebElement saveEdit = driver.FindElement(By.CssSelector("[type='submit']"));
             saveEdit.Click();
             IWebElement cardNumber = driver.FindElement(By.CssSelector("[name='company_website']"));
@@ -134,6 +134,18 @@ namespace Unit_Test_UI
             cvc.SendKeys("341");
             IWebElement saveCard = driver.FindElement(By.CssSelector("[type='submit']"));
             saveCard.Click();
+            IWebElement editAccountInfo3 = driver.FindElement(By.XPath("/html/body/nb-app/ng-component/" +
+                "nb-internal-layout/common-layout/section/div/ng-component/nb-account-info-edit/common-border" +
+                "/div[5]/div/nb-account-info-phone/div[1]/div/nb-edit-switcher/div/div"));
+            editAccountInfo3.Click();
+            IWebElement currentPassword = driver.FindElement(By.CssSelector("[class=\"ng-pristine ng-valid " +
+                "input__self input__self_error input__self_type_password-underline ng-touched\"]"));
+            currentPassword.SendKeys("14finans14Se*");
+            IWebElement phoneNum = driver.FindElement(By.CssSelector("[class=\"ng-pristine ng-valid input__self " +
+                "input__self_error input__self_type_text-underline ng-touched\"]"));
+            phoneNum.SendKeys("5678762345");
+            IWebElement saveinfo = driver.FindElement(By.CssSelector("[type='submit']"));
+            saveinfo.Click();
             Assert.Pass();
         }
 
