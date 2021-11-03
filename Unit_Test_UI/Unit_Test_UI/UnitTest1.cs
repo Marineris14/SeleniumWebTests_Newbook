@@ -64,7 +64,9 @@ namespace Unit_Test_UI
             string mobileNumber = "444.567.7893";
             IWebElement phoneNumperSpace = driver.FindElement(By.CssSelector("[name=\"phone_number\"]"));
             phoneNumperSpace.SendKeys(mobileNumber);
-            IWebElement nextButton = driver.FindElement(By.CssSelector("[class=\"SignupForm__submitButton--1m1C2 Button__button---rQSB Button__themePrimary--E5ESP Button__sizeMedium--uLCYD Button__fontSmall--1EPi5 Button__withTranslate--1qGAH\"]"));
+            IWebElement nextButton = driver.FindElement(By.CssSelector("[class=\"SignupForm__submitButton--1m1C2 " +
+                "Button__button---rQSB Button__themePrimary--E5ESP Button__sizeMedium--uLCYD Button__fontSmall--1EPi5 " +
+                "Button__withTranslate--1qGAH\"]"));
             nextButton.Click();
             string companyName = "Tionele";
             IWebElement companyNameSpace = driver.FindElement(By.CssSelector("[name=\"company_name\"]"));
@@ -84,7 +86,9 @@ namespace Unit_Test_UI
             buttonIndustry.SendKeys(Keys.ArrowDown);
             Thread.Sleep(500);
             buttonIndustry.SendKeys(Keys.Enter);
-            IWebElement buttonFinish = driver.FindElement(By.CssSelector("[class=\"SignupCompanyForm__submitButton--3mz3p Button__button---rQSB Button__themePrimary--E5ESP Button__sizeMedium--uLCYD Button__fontSmall--1EPi5 Button__withTranslate--1qGAH\"]"));
+            IWebElement buttonFinish = driver.FindElement(By.CssSelector("[class=\"SignupCompanyForm__submitButton--3mz3p " +
+                "Button__button---rQSB Button__themePrimary--E5ESP Button__sizeMedium--uLCYD Button__fontSmall--1EPi5 " +
+                "Button__withTranslate--1qGAH\"]"));
             buttonFinish.Click();
             Assert.Pass();
         }
@@ -93,7 +97,8 @@ namespace Unit_Test_UI
 
         public void EditProfile()
         {
-            IWebElement logInButton = driver.FindElement(By.CssSelector("[class *=\"Navbar__navLink--3lL7S Navbar__navLinkSingle--3x6Lx Navbar__login--28b35\"]"));
+            IWebElement logInButton = driver.FindElement(By.CssSelector("[class *=\"Navbar__navLink--3lL7S Navbar__navLinkSingle--3x6Lx " +
+                "Navbar__login--28b35\"]"));
             logInButton.Click();
             IWebElement logInEmail = driver.FindElement(By.CssSelector("[type='email']"));
             logInEmail.SendKeys("businessintelligence2013@gmail.com");
@@ -102,14 +107,18 @@ namespace Unit_Test_UI
             IWebElement Finish = driver.FindElement(By.CssSelector("[type='submit']"));
             Finish.Click();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
             IWebElement avatarIcon = driver.FindElement(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]"));
             avatarIcon.Click();
-            IWebElement editAccountInfo1 = driver.FindElement(By.XPath("/html/body/nb-app/ng-component/nb-internal-layout/common-layout/section/div/ng-component/nb-account-info-edit/common-border/div[1]/div/nb-account-info-general-information/form/div[1]/div/nb-edit-switcher/div/div"));
+            IWebElement editAccountInfo1 = driver.FindElement(By.XPath("/html/body/nb-app/ng-component/nb-internal-layout/common-layout/" +
+                "section/div/ng-component/nb-account-info-edit/common-border/div[1]/div/nb-account-info-general-information/form/div[1]" +
+                "/div/nb-edit-switcher/div/div"));
             editAccountInfo1.Click();
-            IWebElement editName = driver.FindElement(By.CssSelector("[class=\"input__self input__self_type_text-underline ng-pristine ng-valid ng-touched\"]"));
+            IWebElement editName = driver.FindElement(By.CssSelector("[class=\"input__self input__self_type_text-underline" +
+                " ng-pristine ng-valid ng-touched\"]"));
             editName.SendKeys("ly");
-            IWebElement editAccountInfo2 = driver.FindElement(By.CssSelector("[class=\"edit-switcher__icon_type_edit\"]"));
+            IWebElement editAccountInfo2 = driver.FindElement(By.XPath("/html/body/nb-app/ng-component/nb-internal-layout/common-" +
+                "layout/section/div/ng-component/nb-account-info-edit/common-border/div[2]/div/nb-account-info-email-address/form/div[1]" +
+                "/div/nb-edit-switcher/div/div"));
             editAccountInfo2.Click();
             IWebElement verifEmailPassword = driver.FindElement(By.CssSelector("class [type ='text']"));
             verifEmailPassword.SendKeys("1234%Gfk");
@@ -129,14 +138,19 @@ namespace Unit_Test_UI
         [Test]
         public void Autorization()
         {
-            IWebElement logInButton = driver.FindElement(By.CssSelector("[class *=\"Navbar__navLink--3lL7S Navbar__navLinkSingle--3x6Lx Navbar__login--28b35\"]"));
+            IWebElement logInButton = driver.FindElement(By.CssSelector("[class=\"Navbar__navLink--3lL7S Navbar__navLinkSingle--3x6Lx " +
+                "Navbar__login--28b35\"]"));
             logInButton.Click();
-            IWebElement logInEmail = driver.FindElement(By.CssSelector("[type='email']"));
-            logInEmail.SendKeys("businessintelligence2013@gmail.com");
-            IWebElement logInPassword = driver.FindElement(By.CssSelector("[name='password']"));
-            logInPassword.SendKeys("0Gravity147*");
-            IWebElement Finish = driver.FindElement(By.CssSelector("[type='submit']"));
-            Finish.Click();
+            IWebElement logInEmail = driver.FindElement(By.CssSelector("[name=\"email\"]"));
+            logInEmail.SendKeys("marineriscr@gmail.com");
+            IWebElement logInPassword = driver.FindElement(By.CssSelector("[name=\"password\"]"));
+            logInPassword.SendKeys("14finans14Se*");
+            IWebElement autologInButton = driver.FindElement(By.CssSelector("[type=\"submit\"]"));
+            autologInButton.Click();
+            IWebElement avatarIconForExit = driver.FindElement(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]"));
+            avatarIconForExit.Click();
+            IWebElement exit = driver.FindElement(By.CssSelector("[class=\"link link_type_logout link_active\"]"));
+            exit.Click();
             Assert.Pass();
         }
 
