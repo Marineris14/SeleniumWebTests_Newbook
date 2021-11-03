@@ -168,7 +168,7 @@ namespace Unit_Test_UI
         [TearDown]
         public void After()
         {
-            //driver.Quit();
+            driver.Quit();
         }
     }
 }
