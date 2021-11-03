@@ -14,7 +14,6 @@ namespace Unit_Test_UI
     public class Tests_Newbookmodels
     {
         IWebDriver driver;
-        Actions builder;
 
         [SetUp]
         public void Setup()
@@ -157,6 +156,10 @@ namespace Unit_Test_UI
                 .ElementIsVisible(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]")));
             IWebElement avatarIconForExit = driver.FindElement(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]"));
             avatarIconForExit.Click();
+            Actions action = new Actions(driver);
+            action.SendKeys(Keys.PageDown).Perform();
+            action.SendKeys(Keys.PageDown).Perform();
+            action.SendKeys(Keys.PageDown).Perform();
             IWebElement exit = driver.FindElement(By.CssSelector("[class=\"link link_type_logout link_active\"]"));
             exit.Click();
             Assert.Pass();
