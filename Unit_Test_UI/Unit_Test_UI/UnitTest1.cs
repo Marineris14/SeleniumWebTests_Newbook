@@ -101,9 +101,9 @@ namespace Unit_Test_UI
                 "Navbar__login--28b35\"]"));
             logInButton.Click();
             IWebElement logInEmail = driver.FindElement(By.CssSelector("[type='email']"));
-            logInEmail.SendKeys("businessintelligence2013@gmail.com");
+            logInEmail.SendKeys("marineriscr@gmail.com");
             IWebElement logInPassword = driver.FindElement(By.CssSelector("[name='password']"));
-            logInPassword.SendKeys("0Gravity147*");
+            logInPassword.SendKeys("14finans14Se*");
             IWebElement Finish = driver.FindElement(By.CssSelector("[type='submit']"));
             Finish.Click();
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -136,7 +136,7 @@ namespace Unit_Test_UI
         }
 
         [Test]
-        public void Autorization()
+        public void AutorizationAndExit()
         {
             IWebElement logInButton = driver.FindElement(By.CssSelector("[class=\"Navbar__navLink--3lL7S Navbar__navLinkSingle--3x6Lx " +
                 "Navbar__login--28b35\"]"));
