@@ -14,7 +14,6 @@ namespace Unit_Test_UI
     public class Tests_Newbookmodels
     {
         IWebDriver driver;
-        WebDriverWait webDriverWait;
         Actions builder;
 
         [SetUp]
@@ -106,7 +105,11 @@ namespace Unit_Test_UI
             logInPassword.SendKeys("14finans14Se*");
             IWebElement Finish = driver.FindElement(By.CssSelector("[type='submit']"));
             Finish.Click();
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            IWebElement element = wait.Until(SeleniumExtras
+                .WaitHelpers
+                .ExpectedConditions
+                .ElementIsVisible(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]")));
             IWebElement avatarIcon = driver.FindElement(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]"));
             avatarIcon.Click();
             IWebElement editAccountInfo1 = driver.FindElement(By.XPath("/html/body/nb-app/ng-component/nb-internal-layout/common-layout/" +
@@ -147,6 +150,11 @@ namespace Unit_Test_UI
             logInPassword.SendKeys("14finans14Se*");
             IWebElement autologInButton = driver.FindElement(By.CssSelector("[type=\"submit\"]"));
             autologInButton.Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            IWebElement element = wait.Until(SeleniumExtras
+                .WaitHelpers
+                .ExpectedConditions
+                .ElementIsVisible(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]")));
             IWebElement avatarIconForExit = driver.FindElement(By.CssSelector("[class=\"AvatarClient__avatar--3TC7_\"]"));
             avatarIconForExit.Click();
             IWebElement exit = driver.FindElement(By.CssSelector("[class=\"link link_type_logout link_active\"]"));
